@@ -4,6 +4,23 @@ A cutting-edge password management system that combines traditional security wit
 
 ![Project Poster](A3%20poster_page-0001.jpg)
 
+## 🚨 SECURITY ALERT
+
+**⚠️ CRITICAL: This project contains placeholder credentials that MUST be replaced before use!**
+
+Before running this application, you MUST:
+
+1. **Replace AWS credentials** in `run_app.py`
+2. **Update bucket names** in `Dockerfile`
+3. **Create a `.env` file** with your actual credentials
+4. **Never commit real credentials** to version control
+
+**Files that need credential updates:**
+
+- `run_app.py` - Lines 4-8: Replace placeholder AWS credentials
+- `Dockerfile` - Lines 39-41: Update bucket names
+- `.env` file - Create with your actual AWS credentials
+
 ## 🌟 Features
 
 ### 🔒 Security Features
@@ -80,6 +97,8 @@ pip install -r requirements.txt
 
 ### Step 4: Environment Configuration
 
+**⚠️ IMPORTANT: Replace all placeholder credentials before running the application!**
+
 Create a `.env` file in the project root with your AWS credentials:
 
 ```env
@@ -94,6 +113,11 @@ AWS_BUCKET_NAME=your-password-bucket-name
 AWS_REGION=us-east-1
 BRAKET_BUCKET_NAME=your-braket-results-bucket
 ```
+
+**Also update the following files with your credentials:**
+
+- `run_app.py` - Replace placeholder AWS credentials
+- `Dockerfile` - Update bucket names for Docker deployment
 
 ### Step 5: Initialize Database
 
@@ -284,11 +308,15 @@ python test_quantum_devices.py
 
 ## 🔒 Security Considerations
 
+- **⚠️ CRITICAL: Replace all placeholder credentials** before deployment
 - **Never commit AWS credentials** to version control
 - **Use environment variables** for sensitive data
 - **Enable HTTPS** in production
 - **Regular security updates** for dependencies
 - **Monitor AWS usage** and costs
+- **Use IAM roles** instead of access keys when possible
+- **Rotate credentials** regularly
+- **Enable MFA** for AWS accounts
 
 ## 🐛 Troubleshooting
 

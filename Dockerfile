@@ -36,10 +36,10 @@ ENV FLASK_ENV=production
 ENV PYTHONPATH=/app
 ENV PYTHONUNBUFFERED=1
 
-# AWS configuration (without sensitive data)
-ENV AWS_BUCKET_NAME=encryptedpasswords2
-ENV AWS_REGION=ap-southeast-2
-ENV BRAKET_BUCKET_NAME=amazon-braket-results6
+# AWS configuration (replace with your actual values)
+ENV AWS_BUCKET_NAME=YOUR_S3_BUCKET_NAME_HERE
+ENV AWS_REGION=us-east-1
+ENV BRAKET_BUCKET_NAME=YOUR_BRAKET_BUCKET_NAME_HERE
 
 # Expose port 5000 for HTTP
 EXPOSE 5000

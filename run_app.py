@@ -2,11 +2,12 @@ import os
 import subprocess
 
 # Set AWS credentials directly in the environment
-os.environ['AWS_ACCESS_KEY_ID'] = 'AKIASKYTDOW3WCIAZKJG'
-os.environ['AWS_SECRET_ACCESS_KEY'] = 'VDLV1AhuJX0SZAPXwguyo6AH57GzMQILLFOQL8gD'
-os.environ['AWS_BUCKET_NAME'] = 'encryptedpasswords2'
+# Replace with your actual AWS credentials
+os.environ['AWS_ACCESS_KEY_ID'] = 'YOUR_AWS_ACCESS_KEY_ID_HERE'
+os.environ['AWS_SECRET_ACCESS_KEY'] = 'YOUR_AWS_SECRET_ACCESS_KEY_HERE'
+os.environ['AWS_BUCKET_NAME'] = 'YOUR_S3_BUCKET_NAME_HERE'
 os.environ['AWS_REGION'] = 'us-east-1'
-os.environ['BRAKET_BUCKET_NAME'] = 'amazon-braket-results6'
+os.environ['BRAKET_BUCKET_NAME'] = 'YOUR_BRAKET_BUCKET_NAME_HERE'
 
 # Print the environment variables for verification
 print("AWS Configuration:")

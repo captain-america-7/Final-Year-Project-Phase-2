@@ -201,6 +201,8 @@ quantum-password-manager/
 ├── requirements.txt       # Python dependencies
 ├── Dockerfile            # Docker configuration
 ├── Procfile              # Heroku deployment
+├── run_app.py            # Application runner script
+├── test_quantum_devices.py # Quantum device testing
 ├── templates/            # HTML templates
 │   ├── base.html         # Base layout
 │   ├── home.html         # Landing page
@@ -277,7 +279,7 @@ python test_quantum_devices.py
 ### List Available Devices
 
 ```bash
-python list_devices.py
+python test_quantum_devices.py
 ```
 
 ## 🔒 Security Considerations

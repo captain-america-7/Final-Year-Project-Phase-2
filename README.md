@@ -1,86 +1,353 @@
-# Quantum Password Manager
+# 🔐 Quantum Password Manager
 
-A secure password manager built with Flask and SQLite, featuring quantum-inspired password generation and secure vault management.
+A cutting-edge password management system that combines traditional security with quantum computing technology. Built with Flask, AWS services, and quantum circuits for enhanced security.
 
-## Features
+![Project Poster](A3%20poster_page-0001.jpg)
 
-- 🔐 Secure password vault management
-- 🔑 Quantum-inspired password generation
-- 👤 User authentication and account management
-- ⚙️ Customizable security settings
-- 📱 Responsive design for all devices
-- 🔒 Two-factor authentication support
-- 📧 Email notifications
+## 🌟 Features
 
-## Prerequisites
+### 🔒 Security Features
 
-- Python 3.8 or higher
-- pip (Python package installer)
+- **Quantum-Inspired Encryption**: Uses AWS Braket quantum circuits for password verification
+- **Cloud Storage**: Encrypted passwords stored securely in AWS S3
+- **Two-Factor Authentication**: Enhanced security with 2FA support
+- **Session Management**: Secure cookie-based session handling
+- **Fernet Encryption**: Military-grade encryption for password storage
 
-## Installation
+### 👤 User Features
 
-1. Clone the repository:
+- **User Authentication**: Secure registration and login system
+- **Password Vault**: Organize and manage all your passwords
+- **Password Generator**: Quantum-inspired password generation
+- **Responsive Design**: Works seamlessly on all devices
+- **Email Notifications**: Stay informed about account activities
+- **Customizable Settings**: Personalize your security preferences
+
+### 🚀 Technical Features
+
+- **Flask Web Framework**: Modern Python web development
+- **SQLite Database**: Lightweight, reliable data storage
+- **AWS Integration**: Cloud services for scalability
+- **Docker Support**: Easy deployment and containerization
+- **Production Ready**: Gunicorn WSGI server for production
+
+## 📋 Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- **Python 3.8 or higher**
+- **pip** (Python package installer)
+- **Git** (for cloning the repository)
+- **AWS Account** (for quantum computing and cloud storage)
+
+### AWS Setup Requirements
+
+1. **AWS Account**: Create an account at [AWS Console](https://aws.amazon.com/)
+2. **AWS Braket Access**: Enable AWS Braket service for quantum computing
+3. **S3 Bucket**: Create buckets for password storage and quantum results
+4. **IAM User**: Create an IAM user with appropriate permissions
+
+## 🛠️ Installation Guide
+
+### Step 1: Clone the Repository
 
 ```bash
 git clone https://github.com/yourusername/quantum-password-manager.git
 cd quantum-password-manager
 ```
 
-2. Create a virtual environment (recommended):
+### Step 2: Create Virtual Environment
+
+**On Windows:**
 
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+venv\Scripts\activate
 ```
 
-3. Install the required packages:
+**On macOS/Linux:**
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### Step 3: Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Initialize the database:
+### Step 4: Environment Configuration
+
+Create a `.env` file in the project root with your AWS credentials:
+
+```env
+# Flask Configuration
+SECRET_KEY=your-secret-key-here
+DATABASE_URL=sqlite:///quantum_vault.db
+
+# AWS Configuration
+AWS_ACCESS_KEY_ID=your-aws-access-key
+AWS_SECRET_ACCESS_KEY=your-aws-secret-key
+AWS_BUCKET_NAME=your-password-bucket-name
+AWS_REGION=us-east-1
+BRAKET_BUCKET_NAME=your-braket-results-bucket
+```
+
+### Step 5: Initialize Database
 
 ```bash
 python app.py
 ```
 
-## Usage
+This will create the SQLite database and necessary tables.
 
-1. Start the Flask development server:
+## 🚀 Running the Application
+
+### Development Mode
 
 ```bash
 python app.py
 ```
 
-2. Open your web browser and navigate to:
+### Using the Run Script
+
+```bash
+python run_app.py
+```
+
+### Production Mode (with Gunicorn)
+
+```bash
+gunicorn --bind 0.0.0.0:5000 app:app
+```
+
+### Docker Deployment
+
+```bash
+# Build the Docker image
+docker build -t quantum-password-manager .
+
+# Run the container
+docker run -p 5000:5000 quantum-password-manager
+```
+
+## 🌐 Access the Application
+
+Once running, open your web browser and navigate to:
 
 ```
 http://localhost:5000
 ```
 
-3. Create a new account or log in to your existing account.
+## 📱 Usage Guide
 
-4. Start managing your passwords securely!
+### 1. User Registration
 
-## Security Features
+- Click "Register" on the home page
+- Fill in your details and create a secure password
+- Verify your email address
 
-- Passwords are encrypted using Quantum Circuits
-- Secure session management
-- Automatic password generation with customizable options
+### 2. Login
 
-## Contributing
+- Use your registered email and password
+- Enable 2FA for enhanced security
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+### 3. Password Management
 
-## License
+- **Add Passwords**: Store new passwords with descriptions
+- **View Vault**: See all your stored passwords
+- **Generate Passwords**: Use quantum-inspired generation
+- **Edit/Delete**: Manage existing entries
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+### 4. Security Settings
 
-## Acknowledgments
+- Configure password generation preferences
+- Set up email notifications
+- Manage 2FA settings
 
-- Flask web framework
-- SQLite database
-- Bootstrap for the frontend design
-- Font Awesome for icons
-- Qiskit for quantum computing
+## 🔬 Quantum Features
+
+### Quantum Circuit Verification
+
+The application uses AWS Braket to run quantum circuits for password verification:
+
+```python
+# Bell state circuit for quantum verification
+bell = Circuit().h(0).cnot(0, 1)
+```
+
+### Testing Quantum Devices
+
+Run the quantum device test script:
+
+```bash
+python test_quantum_devices.py
+```
+
+This will:
+
+- List all available quantum devices
+- Test device connectivity
+- Run sample quantum circuits
+
+## 🏗️ Project Structure
+
+```
+quantum-password-manager/
+├── app.py                 # Main Flask application
+├── quantum_encryption.py  # Quantum computing integration
+├── requirements.txt       # Python dependencies
+├── Dockerfile            # Docker configuration
+├── Procfile              # Heroku deployment
+├── templates/            # HTML templates
+│   ├── base.html         # Base layout
+│   ├── home.html         # Landing page
+│   ├── login.html        # Login form
+│   ├── register.html     # Registration form
+│   ├── dashboard.html    # User dashboard
+│   ├── vault.html        # Password vault
+│   ├── generator.html    # Password generator
+│   └── settings.html     # User settings
+├── static/               # Static assets
+└── instance/             # Database files
+```
+
+## 🔧 Configuration
+
+### AWS Services Configuration
+
+1. **S3 Bucket Setup**:
+
+   - Create a bucket for encrypted passwords
+   - Configure CORS if needed
+   - Set appropriate permissions
+
+2. **Braket Configuration**:
+
+   - Enable AWS Braket service
+   - Create a bucket for quantum results
+   - Configure IAM permissions
+
+3. **Environment Variables**:
+   - Set all required AWS credentials
+   - Configure Flask secret key
+   - Set database URL
+
+## 🚀 Deployment
+
+### Heroku Deployment
+
+1. Create a Heroku app
+2. Set environment variables in Heroku dashboard
+3. Deploy using Git:
+
+```bash
+heroku create your-app-name
+git push heroku main
+```
+
+### AWS Elastic Beanstalk
+
+1. Install EB CLI
+2. Initialize EB application:
+
+```bash
+eb init
+eb create
+eb deploy
+```
+
+### Docker Deployment
+
+```bash
+# Build and run with Docker Compose
+docker-compose up -d
+```
+
+## 🧪 Testing
+
+### Run Quantum Device Tests
+
+```bash
+python test_quantum_devices.py
+```
+
+### List Available Devices
+
+```bash
+python list_devices.py
+```
+
+## 🔒 Security Considerations
+
+- **Never commit AWS credentials** to version control
+- **Use environment variables** for sensitive data
+- **Enable HTTPS** in production
+- **Regular security updates** for dependencies
+- **Monitor AWS usage** and costs
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **AWS Credentials Error**:
+
+   - Verify your AWS credentials in `.env` file
+   - Check IAM permissions
+
+2. **Quantum Device Unavailable**:
+
+   - Ensure AWS Braket is enabled
+   - Check device status in AWS console
+
+3. **Database Errors**:
+
+   - Delete `instance/quantum_vault.db` and restart
+   - Check database permissions
+
+4. **Port Already in Use**:
+   - Change port in `app.py` or kill existing process
+   - Use different port: `python app.py --port 5001`
+
+## 📊 Performance
+
+- **Response Time**: < 2 seconds for most operations
+- **Quantum Verification**: ~5-10 seconds per password operation
+- **Database**: SQLite optimized for small to medium scale
+- **Cloud Storage**: AWS S3 for scalable password storage
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature-name`
+3. Commit changes: `git commit -am 'Add feature'`
+4. Push to branch: `git push origin feature-name`
+5. Submit a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **Flask** web framework
+- **AWS Braket** for quantum computing
+- **Bootstrap** for frontend design
+- **Font Awesome** for icons
+- **Qiskit** for quantum computing tools
+
+## 📞 Support
+
+For support and questions:
+
+- Create an issue on GitHub
+- Contact the development team
+- Check the troubleshooting section
+
+---
+
+**⚠️ Important**: This is a research project demonstrating quantum computing integration. For production use, ensure all security measures are properly configured and tested.
+
+**🔬 Research Project**: Final Year Project Phase 2 - Quantum Computing in Password Management

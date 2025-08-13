@@ -356,10 +356,6 @@ python test_quantum_devices.py
 4. Push to branch: `git push origin feature-name`
 5. Submit a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🙏 Acknowledgments
 
 - **Flask** web framework
@@ -373,7 +369,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 For support and questions:
 
 - Create an issue on GitHub
-- Contact the development team
+- Email me at: nallaaruntej@gmail.com
 - Check the troubleshooting section
 
 ---
